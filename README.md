@@ -1,1 +1,2 @@
-# botdevelopement
+# Nexus Bot
+This is the developement repository of the Nexus Bot. Please don't share the code or copy it. 
