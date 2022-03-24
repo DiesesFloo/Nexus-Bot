@@ -1,9 +1,10 @@
+#Import of the essential packages
 import discord
 from discord import Client, Intents, Embed, Game
 import discord.ext.commands as commands
 from discord_components import DiscordComponents
 
-#Import the Commands
+#Import of the Commands
 from commands.pingcommand import pingCommand
 from commands.websitecommand import websiteCommand
 from commands.helpcommand import helpCommand
@@ -11,8 +12,13 @@ from commands.avatarcommand import avatarCommand
 from commands.ppcommand import ppCommand
 from commands.clearcommand import clearCommand
 from commands.announcementcommand import announcementCommand
+from commands.ipcommand import ipCommand
+from commands.gaylevelcommand import gayLevelCommand
+from commands.blacklistcommand import blacklistCommand
+from commands.nicknamecommand import nicknameCommand
+from commands.foxcommand import foxCommand
 
-#Import the Listeners
+#Import of the Listeners
 from events.connectlistener import connectListener
 from events.joinlistener import joinListener
 
@@ -35,6 +41,11 @@ client.add_cog(avatarCommand(client))
 client.add_cog(ppCommand(client))
 client.add_cog(clearCommand(client))
 client.add_cog(announcementCommand(client))
+client.add_cog(ipCommand(client))
+client.add_cog(gayLevelCommand(client))
+client.add_cog(blacklistCommand(client))
+client.add_cog(nicknameCommand(client))
+client.add_cog(foxCommand(client))
 
 #Register listener Cog-files
 client.add_cog(connectListener(client))

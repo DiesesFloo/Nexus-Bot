@@ -1,8 +1,6 @@
-from turtle import title
 import discord
 from discord.ext import commands
 from discord import Embed, Game, Intents
-import asyncio
 
 class announcementCommand(commands.Cog):
     def __init__(self, client):

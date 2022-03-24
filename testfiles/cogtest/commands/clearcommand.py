@@ -4,7 +4,9 @@ import discord
 from discord.ext import commands
 from discord import Embed, Game, Intents
 
+#Create the Class
 class clearCommand(commands.Cog):
+    #Create the Class
     def __init__(self, client):
         self.client = client
 
