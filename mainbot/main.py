@@ -17,4 +17,4 @@ client.add_cog(NextLaunchCommand(client))
 
 client.add_cog(ConnectListener(client))
 
-client.run("OTM5NTQ4OTk1MDE2MDk3ODAz.Yf6dMA.OCleFdRyflqchx-pgaYtofUMing")
+client.run("")
