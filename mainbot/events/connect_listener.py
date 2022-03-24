@@ -1,6 +1,7 @@
 from discord import Game
 from discord.ext import commands
 
+
 class ConnectListener(commands.Cog):
     def __init__(self, client):
         self.client = client
