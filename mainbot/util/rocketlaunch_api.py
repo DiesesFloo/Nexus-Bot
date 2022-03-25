@@ -19,7 +19,7 @@ def get_next_launch():
     return output
 
 
-def get_id_of_parameter(parameter: str):
+def get_id_of_parameter(parameter:str):
     if parameter == "rocket":
         return 0
     elif parameter == "mission":

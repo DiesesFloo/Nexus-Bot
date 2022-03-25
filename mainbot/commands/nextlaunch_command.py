@@ -26,6 +26,6 @@ class NextLaunchCommand(commands.Cog):
 
         next_launch_embed.set_thumbnail(url=next_launch_data[rocketlaunch_api.get_id_of_parameter('image')])
 
-        next_launch_embed.set_footer(text="Nexus", icon_url=ctx.message.guild.me.avatar_url)
+        next_launch_embed.set_footer(text="Nexus Bot", icon_url=ctx.message.guild.me.avatar_url)
 
         await ctx.reply(embed=next_launch_embed)
