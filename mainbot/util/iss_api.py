@@ -31,15 +31,3 @@ def get_amount_of_people_on_iss():
     response_json = response.json()
     return response_json["number"]
 
-
-def get_information_about_astronaut(astronaut_name):
-    url = "http://api.open-notify.org/astros.json"
-    response = requests.get(url)
-    response_json = response.json()
-    people = response_json["people"]
-
-    for person in people:
-        if person["name"] == astronaut_name:
-            return person
-
-    return None
