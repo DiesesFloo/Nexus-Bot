@@ -8,7 +8,7 @@ class ConnectListener(commands.Cog):
 
     @commands.Cog.listener()
     async def on_connect(self):
-        await self.client.change_presence(activity=Game(name="Python developement"))
+        await self.client.change_presence(activity=Game(name="-help"))
 
         print("[ℹ️] Bot is ready")
         print(f"[ℹ️] Bot is on {len(self.client.guilds)} servers.")
