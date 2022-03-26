@@ -7,7 +7,7 @@ class InfoCommand(commands.Cog):
     def __init__(self, client):
         self.client = client
 
-    @commands.command()
+    @commands.command(name='info')
     async def info(self, ctx):
         servers = len(self.client.guilds)
         latency = round(self.client.latency * 1000)

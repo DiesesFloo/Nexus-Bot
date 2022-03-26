@@ -12,7 +12,7 @@ class NextLaunchCommand(commands.Cog):
     def __init__(self, client):
         self.client = client
 
-    @commands.command()
+    @commands.command(name="nextlaunch", aliases=["nl"])
     async def nextlaunch(self, ctx):
         next_launch_data = rocketlaunch_api.get_next_launch()
         next_launch_embed = Embed(title="♾️ Next launch", description="Here you can find the next launch:")

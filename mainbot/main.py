@@ -6,6 +6,7 @@ import os
 from commands.nextlaunch_command import NextLaunchCommand
 from commands.news_command import NewsCommand
 from commands.info_command import InfoCommand
+from commands.marsimage_command import MarsImageCommand
 
 from events.connect_listener import ConnectListener
 
@@ -27,6 +28,7 @@ sys.path.append(".")
 client.add_cog(NextLaunchCommand(client))
 client.add_cog(NewsCommand(client))
 client.add_cog(InfoCommand(client))
+client.add_cog(MarsImageCommand(client))
 
 client.add_cog(ConnectListener(client))
 
