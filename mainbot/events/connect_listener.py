@@ -6,7 +6,7 @@ class ConnectListener(commands.Cog):
     def __init__(self, client):
         """
         Constructor
-        :param client:
+        :param client: Client
         """
         self.client = client
 

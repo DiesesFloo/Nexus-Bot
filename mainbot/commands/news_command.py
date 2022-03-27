@@ -11,7 +11,7 @@ class NewsCommand(commands.Cog):
     def __init__(self, client):
         """
         Constructor
-        :param client:
+        :param client: Client
         """
         self.client = client
 
@@ -19,7 +19,7 @@ class NewsCommand(commands.Cog):
     async def news(self, ctx):
         """
         Command to get the latest news from space
-        :param ctx:
+        :param ctx: Command context
         """
         news_data = get_latest_news()
 

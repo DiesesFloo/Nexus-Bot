@@ -9,7 +9,7 @@ class IssCommand(commands.Cog):
     def __init__(self, client):
         """
         Constructor
-        :param client:
+        :param client: Client
         """
         self.client = client
 
@@ -17,7 +17,7 @@ class IssCommand(commands.Cog):
     async def iss(self, ctx):
         """
         Get the current location of the ISS and amount of astronaut on the ISS
-        :param ctx:
+        :param ctx: Command context
         """
         iss_embed = Embed(title="♾️ ISS Information", description="Information about the International Space Station")
 

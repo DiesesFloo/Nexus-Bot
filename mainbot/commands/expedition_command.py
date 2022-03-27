@@ -10,7 +10,7 @@ class ExpeditionCommand(commands.Cog):
     def __init__(self, client):
         """
         Constructor
-        :param client:
+        :param client: Client
         """
         self.client = client
 
@@ -18,7 +18,7 @@ class ExpeditionCommand(commands.Cog):
     async def expedition(self, ctx):
         """
         Command to get the latest expedition
-        :param ctx:
+        :param ctx: Command context
         """
         expedition = get_latest_expedition()
 

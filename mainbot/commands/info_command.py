@@ -8,7 +8,7 @@ class InfoCommand(commands.Cog):
     def __init__(self, client):
         """
         Initialize the InfoCommand class
-        :param client:
+        :param client: Client
         """
         self.client = client
 
@@ -16,7 +16,7 @@ class InfoCommand(commands.Cog):
     async def info(self, ctx):
         """
         Displays information about the bot
-        :param ctx:
+        :param ctx: Command context
         """
         servers = len(self.client.guilds)
         latency = round(self.client.latency * 1000)
@@ -36,7 +36,7 @@ class InfoCommand(commands.Cog):
     def get_contributors():
         """
         Get the contributors of the bot by querying the GitHub API
-        :return:
+        :return: A list of contributors
         """
         request = requests.get("https://api.github.com/repos/diesesfloo/Nexus-Bot/contributors")
         repo_data = request.json()

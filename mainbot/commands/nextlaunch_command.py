@@ -12,7 +12,7 @@ class NextLaunchCommand(commands.Cog):
     def __init__(self, client):
         """
         Constructor
-        :param client:
+        :param client: Client
         """
         self.client = client
 
@@ -20,7 +20,7 @@ class NextLaunchCommand(commands.Cog):
     async def nextlaunch(self, ctx):
         """
         Command to get the next launch
-        :param ctx:
+        :param ctx: Command context
         """
         next_launch_data = rocketlaunch_api.get_next_launch()
         next_launch_embed = Embed(title="♾️ Next launch", description="Here you can find the next launch:")

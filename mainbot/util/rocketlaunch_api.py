@@ -4,7 +4,7 @@ import requests
 def get_next_launch():
     """
     Returns the next launch in form of a list.
-    :return:
+    :return: List of information about the next launch.
     """
     output = []
 
@@ -31,7 +31,7 @@ def get_id_of_parameter(parameter:str):
     """
     Returns the ids for the given parameter for the get_next_launch function.
     :param parameter:
-    :return:
+    :return: Index of the parameter.
     """
     if parameter == "rocket":
         return 0

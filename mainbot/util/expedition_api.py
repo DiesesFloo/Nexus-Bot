@@ -4,7 +4,7 @@ import requests
 def get_latest_expedition():
     """
     Returns the latest expedition as list
-    :return:
+    :return: List with information about the latest expedition
     """
     output = []
     url = "https://ll.thespacedevs.com/2.2.0/expedition/?ordering=-start&limit=1"
@@ -22,7 +22,7 @@ def get_id_of_parameter(parameter):
     """
     Returns the ids for the given parameter for the get_latest_expedition function
     :param parameter:
-    :return:
+    :return: index of the parameter
     """
     if parameter == "name":
         return 0

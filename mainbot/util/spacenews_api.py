@@ -4,7 +4,7 @@ import requests
 def get_latest_news():
     """
     Returns the latest news from space.
-    :return:
+    :return: List of parameters of the latest news.
     """
     output = []
 
@@ -24,8 +24,8 @@ def get_latest_news():
 def get_id_of_parameter(parameter: str):
     """
         Returns the ids for the given parameter for get_latest_news function.
-        :param parameter:
-        :return:
+        :param parameter: Parameter to get the index for.
+        :return: Index of the parameter.
         """
     if parameter == "title":
         return 0

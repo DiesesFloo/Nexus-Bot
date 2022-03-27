@@ -6,7 +6,7 @@ class HelpCommand(commands.Cog):
     def __init__(self, client):
         """
         Constructor
-        :param client:
+        :param client: Client
         """
         self.client = client
 
@@ -14,7 +14,7 @@ class HelpCommand(commands.Cog):
     async def help(self, ctx):
         """
         Displays all commands and their descriptions.
-        :param ctx:
+        :param ctx: Command context
         """
         help_embed = Embed(title="♾️ Help", description="Here's a list of commands you can use")
 
