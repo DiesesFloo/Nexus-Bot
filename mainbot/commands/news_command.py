@@ -9,10 +9,18 @@ from util.spacenews_api import get_id_of_parameter, get_latest_news
 
 class NewsCommand(commands.Cog):
     def __init__(self, client):
+        """
+        Constructor
+        :param client:
+        """
         self.client = client
 
     @commands.command(name="news", aliases=["new", "n"])
     async def news(self, ctx):
+        """
+        Command to get the latest news from space
+        :param ctx:
+        """
         news_data = get_latest_news()
 
         news_embed = Embed(title=f"♾️ {news_data[get_id_of_parameter('title')]}",

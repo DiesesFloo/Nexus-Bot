@@ -2,6 +2,10 @@ import requests
 
 
 def get_latest_news():
+    """
+    Returns the latest news from space.
+    :return:
+    """
     output = []
 
     request = requests.get("https://api.spaceflightnewsapi.net/v3/articles/?_limit=1")
@@ -18,6 +22,11 @@ def get_latest_news():
 
 
 def get_id_of_parameter(parameter: str):
+    """
+        Returns the ids for the given parameter for get_latest_news function.
+        :param parameter:
+        :return:
+        """
     if parameter == "title":
         return 0
     elif parameter == "url":

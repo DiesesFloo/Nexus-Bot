@@ -7,10 +7,18 @@ from util.marsimage_api import get_random_image_from_mars_rover
 
 class MarsImageCommand(commands.Cog):
     def __init__(self, client):
+        """
+        Constructor
+        :param client:
+        """
         self.bot = client
 
     @commands.command(name='marsimage', aliases=['mars'])
     async def marsimage(self, ctx):
+        """
+        Sends a random image from the Mars Rover by the NASA API
+        :param ctx:
+        """
         image = get_random_image_from_mars_rover()
         marsimage_embed = Embed(title="♾️ Mars Image", description="Image from [NASA's Mars Rover](https://mars.nasa.gov/rover/).\n\n")
         marsimage_embed.set_image(url=image)
