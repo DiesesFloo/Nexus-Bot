@@ -27,7 +27,7 @@ class PictureOfTheDayCommand(commands.Cog):
         apod_embed.add_field(name=f"**Copyright**", value=f"{get_apod_image()[get_id_of_parameter('copyright')]}", inline=True)
         apod_embed.add_field(name=f"**Link**", value=f"[Click here]({get_apod_image()[get_id_of_parameter('url')]})", inline=True)
 
-        apod_embed.set_footer(text="Nexus Bot", icon_url=ctx.message.guild.me.avatar_url)
+        apod_embed.set_footer(text="Nexus Bot", icon_url=self.client.user.avatar_url)
 
         await ctx.reply(embed=apod_embed)
 

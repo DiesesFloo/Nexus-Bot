@@ -18,10 +18,10 @@ class HelpCommand(commands.Cog):
         """
         help_embed = Embed(title="♾️ Help", description="Here's a list of commands you can use")
 
-        help_embed.add_field(name="🚀 Space Information", value="`news`, `nextlaunch`, `iss`, `expedition`", inline=True)
-        help_embed.add_field(name="🪅 Fun", value="`marsimage`", inline=True)
-        help_embed.add_field(name="🔍 Bot Information", value="`help`, `info`", inline=True)
+        help_embed.add_field(name="🚀 Space Information", value="`news`, `nextlaunch`, `iss`, `expedition`", inline=False)
+        help_embed.add_field(name="🪅 Fun", value="`marsimage`, `pictureoftheday`", inline=False)
+        help_embed.add_field(name="🔍 Bot Information", value="`help`, `info`", inline=False)
 
-        help_embed.set_footer(text="Nexus Bot", icon_url=ctx.message.guild.me.avatar_url)
+        help_embed.set_footer(text="Nexus Bot", icon_url=self.client.user.avatar_url)
 
         await ctx.reply(embed=help_embed)

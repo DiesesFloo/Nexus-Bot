@@ -8,7 +8,6 @@ from commands.info_command import InfoCommand
 from commands.marsimage_command import MarsImageCommand
 from commands.help_command import HelpCommand
 from commands.iss_command import IssCommand
-from commands.expedition_command import ExpeditionCommand
 from commands.pictureoftheday_command import PictureOfTheDayCommand
 
 from events.connect_listener import ConnectListener
@@ -36,7 +35,6 @@ client.add_cog(InfoCommand(client))
 client.add_cog(MarsImageCommand(client))
 client.add_cog(HelpCommand(client))
 client.add_cog(IssCommand(client))
-client.add_cog(ExpeditionCommand(client))
 client.add_cog(PictureOfTheDayCommand(client))
 
 client.add_cog(ConnectListener(client))

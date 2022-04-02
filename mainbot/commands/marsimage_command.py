@@ -11,7 +11,7 @@ class MarsImageCommand(commands.Cog):
         Constructor
         :param client: Client
         """
-        self.bot = client
+        self.client = client
 
     @commands.command(name='marsimage', aliases=['mars'])
     async def marsimage(self, ctx):
@@ -23,6 +23,6 @@ class MarsImageCommand(commands.Cog):
         marsimage_embed = Embed(title="♾️ Mars Image", description="Image from [NASA's Mars Rover](https://mars.nasa.gov/rover/).\n\n")
         marsimage_embed.set_image(url=image)
 
-        marsimage_embed.set_footer(text="Nexus Bot", icon_url=ctx.message.guild.me.avatar_url)
+        marsimage_embed.set_footer(text="Nexus Bot", icon_url=self.client.user.avatar_url)
 
         await ctx.reply(embed=marsimage_embed)

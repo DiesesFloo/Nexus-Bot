@@ -27,7 +27,7 @@ class NewsCommand(commands.Cog):
                            description=f"{news_data[get_id_of_parameter('summary')]} [Read more]({news_data[get_id_of_parameter('url')]})")
         news_embed.set_thumbnail(url=news_data[get_id_of_parameter('image')])
 
-        news_embed.set_footer(text="Nexus Bot", icon_url=ctx.message.guild.me.avatar_url)
+        news_embed.set_footer(text="Nexus Bot", icon_url=self.client.user.avatar_url)
 
         await ctx.reply(embed=news_embed)
 

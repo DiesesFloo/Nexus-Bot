@@ -28,7 +28,9 @@ class InfoCommand(commands.Cog):
         info_embed.add_field(name="🏓 **Latency**", value=f"{latency}ms")
         info_embed.add_field(name="👾 **Contributors**", value=contributors)
 
-        info_embed.set_footer(text="Nexus Bot", icon_url=ctx.message.guild.me.avatar_url)
+        info_embed.set_thumbnail(url=f"{self.client.user.avatar_url}?size=1024")
+
+        info_embed.set_footer(text="Nexus Bot", icon_url=self.client.user.avatar_url)
 
         await ctx.reply(embed=info_embed)
 
