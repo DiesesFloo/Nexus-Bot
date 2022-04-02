@@ -24,4 +24,6 @@ class IssCommand(commands.Cog):
         iss_embed.add_field(name="🗺️ Location", value=", ".join(get_iss_location_as_coordinates()))
         iss_embed.add_field(name="🛰️ Astronauts", value=get_amount_of_people_on_iss())
 
+        iss_embed.set_footer(text="Nexus Bot", icon_url=ctx.message.guild.me.avatar_url)
+
         await ctx.reply(embed=iss_embed)
