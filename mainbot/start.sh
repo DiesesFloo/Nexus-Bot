@@ -1,1 +1,1 @@
-screen -dm bash -c 'main.py'
+screen -S nexusbot python3 main.py
