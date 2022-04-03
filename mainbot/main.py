@@ -11,6 +11,7 @@ from commands.iss_command import IssCommand
 from commands.pictureoftheday_command import PictureOfTheDayCommand
 
 from events.connect_listener import ConnectListener
+from events.commanderror_listener import CommandErrorListener
 
 token = ""
 
@@ -38,5 +39,6 @@ client.add_cog(IssCommand(client))
 client.add_cog(PictureOfTheDayCommand(client))
 
 client.add_cog(ConnectListener(client))
+client.add_cog(CommandErrorListener(client))
 
 client.run(token)

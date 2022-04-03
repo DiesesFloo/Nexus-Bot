@@ -20,7 +20,10 @@ def get_apod_image():
     output.append(apod_image['title'])
     output.append(apod_image['explanation'])
     output.append(apod_image['hdurl'])
-    output.append(apod_image['copyright'])
+    if 'copyright' in apod_image:
+        output.append(apod_image['copyright'])
+    else:
+        output.append("N/A")
 
     return output
 
