@@ -18,7 +18,7 @@ class HelpCommand(commands.Cog):
         """
         help_embed = Embed(title="♾️ Help", description="Here's a list of commands you can use")
 
-        help_embed.add_field(name="🚀 Space Information", value="`news`, `nextlaunch`, `iss`, `expedition`", inline=False)
+        help_embed.add_field(name="🚀 Space Information", value="`news`, `nextlaunch`, `iss`", inline=False)
         help_embed.add_field(name="🪅 Fun", value="`marsimage`, `pictureoftheday`", inline=False)
         help_embed.add_field(name="🔍 Bot Information", value="`help`, `info`", inline=False)
 
