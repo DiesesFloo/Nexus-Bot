@@ -1,6 +1,6 @@
 {
-  "user": "nexusbot",
-  "password": "x(rLwDYVDjvTI9a2",
+  "user": "root",
+  "password": "123456",
   "database": "nexusbot",
-  "host": "85.214.234.117"
+  "host": "localhost"
 }
