@@ -1,6 +1,7 @@
 import discord
 import discord.ext.commands as commands
 import sys
+import json
 
 from commands.nextlaunch_command import NextLaunchCommand
 from commands.news_command import NewsCommand
@@ -13,13 +14,7 @@ from commands.pictureoftheday_command import PictureOfTheDayCommand
 from events.connect_listener import ConnectListener
 from events.commanderror_listener import CommandErrorListener
 
-token = ""
-
-try:
-    with open('token.txt', 'r') as f:
-        token = f.readline()
-except:
-    print("Error while reading token.")
+token = json.load(open('apikeys.json'))['discord']
 
 intents = discord.Intents().all()
 intents.members = True
