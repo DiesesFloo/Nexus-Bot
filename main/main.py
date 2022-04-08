@@ -11,6 +11,7 @@ from commands.marsimage_command import MarsImageCommand
 from commands.help_command import HelpCommand
 from commands.iss_command import IssCommand
 from commands.pictureoftheday_command import PictureOfTheDayCommand
+from commands.invite_command import InviteCommand
 
 from events.connect_listener import ConnectListener
 from events.commanderror_listener import CommandErrorListener
@@ -33,6 +34,7 @@ client.add_cog(MarsImageCommand(client))
 client.add_cog(HelpCommand(client))
 client.add_cog(IssCommand(client))
 client.add_cog(PictureOfTheDayCommand(client))
+client.add_cog(InviteCommand(client))
 
 client.add_cog(ConnectListener(client))
 client.add_cog(CommandErrorListener(client))
