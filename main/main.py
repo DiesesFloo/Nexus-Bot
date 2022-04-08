@@ -2,6 +2,7 @@ import discord
 import discord.ext.commands as commands
 import sys
 import json
+import mysql.connector
 
 from commands.nextlaunch_command import NextLaunchCommand
 from commands.news_command import NewsCommand
@@ -35,5 +36,15 @@ client.add_cog(PictureOfTheDayCommand(client))
 
 client.add_cog(ConnectListener(client))
 client.add_cog(CommandErrorListener(client))
+
+
+db_data = json.load(open('mysql.json'))
+db = mysql.connector.connect(
+    host=db_data['host'],
+    user=db_data['user'],
+    password=db_data['password'],
+    database=db_data['database'])
+
+cursor = db.cursor()
 
 client.run(token)

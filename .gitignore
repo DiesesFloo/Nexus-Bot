@@ -2,3 +2,4 @@
 .idea/
 main/token.txt
 main/apikeys.json
+main/mysql.json

@@ -13,6 +13,7 @@ class CommandErrorListener(commands.Cog):
             not_found_embed.set_footer(text="Nexus Bot", icon_url=self.client.user.avatar_url)
             await ctx.reply(embed=not_found_embed)
             return
+
         error_embed = Embed(title="♾️ Error", description=f"Error while executing command: {str(error)}.")
         error_embed.set_footer(text="Nexus Bot", icon_url=self.client.user.avatar_url)
         await ctx.reply(embed=error_embed)
