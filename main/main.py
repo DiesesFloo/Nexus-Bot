@@ -16,37 +16,57 @@ from commands.invite_command import InviteCommand
 from events.connect_listener import ConnectListener
 from events.commanderror_listener import CommandErrorListener
 
-token = json.load(open('apikeys.json'))['discord']
 
-intents = discord.Intents().all()
-intents.members = True
+class Main():
 
-client = commands.Bot("-", intents=intents)
+    def __init__(self):
+        self.client = None
+        self.cursor = None
 
-sys.path.append(".")
+    def register_commands(self):
+        self.client.remove_command("help")
 
-client.remove_command("help")
+        self.client.add_cog(NextLaunchCommand(self.client))
+        self.client.add_cog(NewsCommand(self.client))
+        self.client.add_cog(InfoCommand(self.client))
+        self.client.add_cog(MarsImageCommand(self.client))
+        self.client.add_cog(HelpCommand(self.client))
+        self.client.add_cog(IssCommand(self.client))
+        self.client.add_cog(PictureOfTheDayCommand(self.client))
+        self.client.add_cog(InviteCommand(self.client))
 
-client.add_cog(NextLaunchCommand(client))
-client.add_cog(NewsCommand(client))
-client.add_cog(InfoCommand(client))
-client.add_cog(MarsImageCommand(client))
-client.add_cog(HelpCommand(client))
-client.add_cog(IssCommand(client))
-client.add_cog(PictureOfTheDayCommand(client))
-client.add_cog(InviteCommand(client))
+    def register_events(self):
+        self.client.add_cog(ConnectListener(self.client))
+        self.client.add_cog(CommandErrorListener(self.client))
 
-client.add_cog(ConnectListener(client))
-client.add_cog(CommandErrorListener(client))
+    def connect_to_database(self):
+        db_data = json.load(open('mysql.json'))
+        db = mysql.connector.connect(
+            host=db_data['host'],
+            user=db_data['user'],
+            password=db_data['password'],
+            database=db_data['database'])
+
+        self.cursor = db.cursor()
+
+    def get_cursor(self):
+        return self.cursor
+
+    def run(self):
+        sys.path.append(".")
+
+        token = json.load(open('apikeys.json'))['discord']
+
+        intents = discord.Intents().all()
+        intents.members = True
+
+        self.client = commands.Bot("-", intents=intents)
+
+        self.register_commands()
+        self.register_events()
+        self.connect_to_database()
+
+        self.client.run(token)
 
 
-db_data = json.load(open('mysql.json'))
-db = mysql.connector.connect(
-    host=db_data['host'],
-    user=db_data['user'],
-    password=db_data['password'],
-    database=db_data['database'])
-
-cursor = db.cursor()
-
-client.run(token)
+Main().run()
