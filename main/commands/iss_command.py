@@ -21,8 +21,8 @@ class IssCommand(commands.Cog):
         """
         iss_embed = Embed(title="♾️ ISS Information", description="Information about the International Space Station")
 
-        iss_embed.add_field(name="🗺️ Location", value=", ".join(get_iss_location_as_coordinates()))
-        iss_embed.add_field(name="🛰️ Astronauts", value=get_amount_of_people_on_iss())
+        iss_embed.add_field(name="Location", value=", ".join(get_iss_location_as_coordinates()))
+        iss_embed.add_field(name="Astronauts", value=get_amount_of_people_on_iss())
 
         iss_embed.set_thumbnail(url="https://media.wired.com/photos/5d0015546874e00ab2efb677/master/pass/science_iss_iss056e201352.jpg")
 

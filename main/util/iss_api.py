@@ -28,7 +28,8 @@ def get_current_astronauts_on_iss():
     people = response_json["people"]
 
     for person in people:
-        output.append(person["name"])
+        if person["craft"] == "ISS":
+            output.append(person["name"])
 
     return output
 
@@ -38,8 +39,8 @@ def get_amount_of_people_on_iss():
     Returns the amount of people on the ISS
     :return: Amount of people on the ISS
     """
-    url = "http://api.open-notify.org/astros.json"
-    response = requests.get(url)
-    response_json = response.json()
-    return response_json["number"]
+    astronauts = get_current_astronauts_on_iss()
+    output = len(astronauts)
+
+    return output
 

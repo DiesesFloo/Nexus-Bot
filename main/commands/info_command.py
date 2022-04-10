@@ -24,10 +24,10 @@ class InfoCommand(commands.Cog):
 
         info_embed = Embed(title="♾️ Bot Info", description="Here you can find information about the bot:")
 
-        info_embed.add_field(name="🖥️ **Servers**", value=str(servers))
-        info_embed.add_field(name="🏓 **Latency**", value=f"{latency}ms")
-        info_embed.add_field(name="👾 **Contributors**", value=contributors)
-        info_embed.add_field(name="😺 **GitHub**", value="[Nexus-Bot](https://github.com/diesesfloo/Nexus-Bot)")
+        info_embed.add_field(name="**Servers**", value=str(servers))
+        info_embed.add_field(name="**Latency**", value=f"{latency}ms")
+        info_embed.add_field(name="**Contributors**", value=contributors)
+        info_embed.add_field(name="**GitHub**", value="[Nexus-Bot](https://github.com/diesesfloo/Nexus-Bot)")
 
         info_embed.set_thumbnail(url=f"{self.client.user.avatar_url}?size=1024")
 

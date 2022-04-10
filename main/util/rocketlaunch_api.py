@@ -16,13 +16,20 @@ def get_next_launch():
         if keys['mission'] == None:
             output.append("N/A")
             output.append("N/A")
+            output.append("N/A")
         else:
             output.append(keys['mission']['name'])
             output.append(keys['mission']['type'])
+            output.append(keys['mission']['description'])
+
         output.append(keys['launch_service_provider']['name'])
         output.append(keys['status']['name'])
         output.append(keys['window_end'])
         output.append(keys['image'])
+
+        output.append(keys['pad']['name'])
+        output.append(keys['pad']['location']['map_image'])
+        output.append(keys['pad']['location']['name'])
 
     return output
 
@@ -39,13 +46,21 @@ def get_id_of_parameter(parameter:str):
         return 1
     elif parameter == "type":
         return 2
-    elif parameter == "agency":
+    elif parameter == "description":
         return 3
-    elif parameter == "status":
+    elif parameter == "agency":
         return 4
-    elif parameter == "date":
+    elif parameter == "status":
         return 5
-    elif parameter == "image":
+    elif parameter == "date":
         return 6
+    elif parameter == "image":
+        return 7
+    elif parameter == "pad_name":
+        return 8
+    elif parameter == "pad_map":
+        return 9
+    elif parameter == "pad_location":
+        return 10
     else:
         return None

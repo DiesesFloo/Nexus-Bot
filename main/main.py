@@ -15,6 +15,7 @@ from commands.invite_command import InviteCommand
 
 from events.connect_listener import ConnectListener
 from events.commanderror_listener import CommandErrorListener
+from events.guildmessage_listener import GuildMessageListener
 
 
 class Main():
@@ -38,6 +39,7 @@ class Main():
     def register_events(self):
         self.client.add_cog(ConnectListener(self.client))
         self.client.add_cog(CommandErrorListener(self.client))
+        self.client.add_cog(GuildMessageListener(self.client))
 
     def connect_to_database(self):
         db_data = json.load(open('mysql.json'))
